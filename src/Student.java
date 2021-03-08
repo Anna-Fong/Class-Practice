@@ -2,46 +2,30 @@ public class Student {
 
     private String firstName;
     private static int studentIDGenerator = 0;
-    private static int studentID;
+    private int studentID;
 
 
-    Student(String firstName, int studentID) {
-        firstName = firstName;
-
+    Student(String firstName, int StudentID){
         this.firstName = firstName;
+        firstName = "Anna";
         System.out.println(firstName);
-        for(studentIDGenerator = 0; studentIDGenerator < 8;) {
-            studentIDGenerator++;
-            System.out.println("Student ID: " + studentIDGenerator);
-            if (studentIDGenerator == 8) {
-                break;
-            }
-        }
+        System.out.println("Default Constructor");
+        StudentID = studentID;
+        studentID = studentIDGenerator;
+        studentIDGenerator++;
+        System.out.println("ID: " + studentIDGenerator);
     }
 
-    public void setFirstName(String firstname) {
-        firstName = firstname;
-        //System.out.println(firstname);
-
-
-    }
-
-    public String toString() {
-        return "First name: " + firstName;
-
-    }
 }
-
-
-
-
 /*
-    String courseArray;
+    String StudentID;
     Courses[] array;
     int index = 0;
 
+
+
     Student(String courseArray) {
-        this.courseArray = courseArray;
+        this.Student = courseArray;
         array = new Courses[8];
     }
 
@@ -53,12 +37,34 @@ public class Student {
     public void addCourse(Courses course) {
         if (index < 2) {
             array[index] = course;
-            index ++;
-        }
-        else{
+            index++;
+        } else {
             array = addItem(course);
 
         }
 
     }
-*/
+}
+
+
+
+
+/*Create a class called Student.  Students should have the following:
+	• First name
+	• Student ID  (use static variables)
+	• An array to hold Courses (8 Maximum)
+
+Create a class called Courses.  Courses should have the following:
+	• Subject Name
+	• Student grade
+
+When a Course object is printed the Subject name should print
+When a Student object is printed the Student ID and Name should print --
+Course Constructor should take in a subject name and grade
+
+Student Constructor should take in a name and increase the student ID by 1 --
+Create a method to add a course to the students array
+Create a method to find the average grade in all of a student's courses
+Create a method that prints out the students courses */
+
+
