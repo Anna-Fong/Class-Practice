@@ -1,23 +1,29 @@
 public class Courses {
 
-    private String name;
-    private int grade;
+    private String subjectName;
+    public int studentGrade;
 
     Courses(String subjectName, int studentGrade) {
-        this.name = name;
-        this.grade = grade;
-        System.out.println(name + grade);
+        this.subjectName = subjectName;
+        this.studentGrade = studentGrade;
     }
 
-    public void setSubjectName(String subjectName) {
-        name = subjectName;
+    public void setSubjectName(String SubjectName) {
+        subjectName = SubjectName;
     }
     public String getSubjectName() {
-        return name;
+        return subjectName;
     }
 
-    public void setGrade(int subjectGrade) {
-        grade = subjectGrade;
+    public void setStudentGrade(int StudentGrade) {
+        studentGrade = StudentGrade;
+    }
+    public int getStudentGrade() {
+        return studentGrade;
+    }
 
+    //prints out students courses
+    public String toString() {
+        return "\nGrade: " + studentGrade + "\tSubject: " + subjectName;
     }
 }

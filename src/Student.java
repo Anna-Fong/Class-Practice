@@ -1,70 +1,44 @@
+import java.util.ArrayList;
+
 public class Student {
 
     private String firstName;
     private static int studentIDGenerator = 0;
     private int studentID;
 
+        //takes student's name and increases ID by 1
+        Student(String firstName){
+            this.firstName = firstName;
+            studentID = studentIDGenerator;
+            studentIDGenerator++;
+        }
 
-    Student(String firstName, int StudentID){
-        this.firstName = firstName;
-        firstName = "Anna";
-        System.out.println(firstName);
-        System.out.println("Default Constructor");
-        StudentID = studentID;
-        studentID = studentIDGenerator;
-        studentIDGenerator++;
-        System.out.println("ID: " + studentIDGenerator);
-    }
+    ArrayList<Courses> arrlist = new ArrayList<>(8);
 
-}
-/*
-    String StudentID;
-    Courses[] array;
-    int index = 0;
+    double total = 0;
+    double average = 0;
 
+        //add course to students array + find average
+        public void addCourse(Courses courses) {
+            this.arrlist.add(courses);
+            total = total + courses.studentGrade;
+            average = total / arrlist.size();
+        }
 
+        public String formattedArrlist() {
+            String formattedArrlist = arrlist.toString()
+                    .replace("[", "")
+                    .replace("]", "")
+                    .replace(",", "");
+            return formattedArrlist;
+        }
 
-    Student(String courseArray) {
-        this.Student = courseArray;
-        array = new Courses[8];
-    }
-
-    private Courses[] addItem(Courses course) {
-        Courses[] returnVal = new Courses[array.length + 1];
-        return returnVal;
-    }
-
-    public void addCourse(Courses course) {
-        if (index < 2) {
-            array[index] = course;
-            index++;
-        } else {
-            array = addItem(course);
-
+        public String toString() {
+            return "First Name: " + firstName + "\nID: " + studentIDGenerator + formattedArrlist() +
+                    "\nAverage Grade: " + average ;
         }
 
     }
-}
 
-
-
-
-/*Create a class called Student.  Students should have the following:
-	• First name
-	• Student ID  (use static variables)
-	• An array to hold Courses (8 Maximum)
-
-Create a class called Courses.  Courses should have the following:
-	• Subject Name
-	• Student grade
-
-When a Course object is printed the Subject name should print
-When a Student object is printed the Student ID and Name should print --
-Course Constructor should take in a subject name and grade
-
-Student Constructor should take in a name and increase the student ID by 1 --
-Create a method to add a course to the students array
-Create a method to find the average grade in all of a student's courses
-Create a method that prints out the students courses */
 
 
